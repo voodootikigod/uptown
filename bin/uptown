@@ -11,7 +11,7 @@ var fs = require('fs')
  * Framework version.
  */
 
-var version = '2.4.3';
+var version = '0.0.1';
 
 /**
  * Default css template.
@@ -28,6 +28,27 @@ var css = [
   , '}'
 ].join('\n');
 
+/**
+ * Jade layout template.
+ */
+
+var jadeLayout = [
+    '!!!'
+  , 'html'
+  , '  head'
+  , '    title= title'
+  , '    link(rel=\'stylesheet\', href=\'/stylesheets/style.css\')'
+  , '  body!= body'
+].join('\n');
+
+/**
+ * Jade index template.
+ */
+
+var jadeIndex = [
+    'h1= title'
+  , 'p Welcome to #{title}'
+].join('\n');
 
 /**
  * Usage documentation.
@@ -79,18 +100,6 @@ while (args.length) {
     case '--sessions':
       sessions = true;
       break;
-    case '-c':
-    case '--css':
-      args.length
-        ? (cssEngine = args.shift())
-        : abort('--css requires an argument');
-      break;
-    case '-t':
-    case '--template':
-      args.length
-        ? (templateEngine = args.shift())
-        : abort('--template requires an argument');
-      break;
     default:
         path = arg;
   }
@@ -139,10 +148,7 @@ function createApplicationAt(path) {
     mkdir(path + '/public/javascripts');
     mkdir(path + '/public/images');
     mkdir(path + '/public/stylesheets', function(){
-      switch (cssEngine) {
-        default:
-          write(path + '/public/stylesheets/style.css', css);
-      }
+      write(path + '/public/stylesheets/style.css', css);
     });
     mkdir(path + '/views', function(){
       write(path + '/views/layout.jade', jadeLayout);

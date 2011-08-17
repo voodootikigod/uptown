@@ -12,7 +12,7 @@
   },
   "keywords": ["rails", "web applications","web", "fullstack", "applications"],
   "dependencies": { 
-  	  "express":  ">= 2.4.0 < 2.0.0"
+  	  "express":  ">= 2.4.0"
   	, "connect": ">= 1.5.2 < 2.0.0"
     , "postmark": ">= 0.1.2 < 1.0.0" 
     , "login":    ">= 0.6.9 < 1.0.0"

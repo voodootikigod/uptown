@@ -20,6 +20,7 @@
     , "connect-redis": ">= 1.0.7 < 2.0.0"
     , "uglify-js": ">= 1.0.6 < 2.0.0"
   },
+  "bin": { "uptown": "./bin/uptown" },
   "main": "./lib/uptown",
   "engines": { "node": ">= 0.4.0" }
 }

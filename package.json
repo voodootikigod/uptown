@@ -12,13 +12,13 @@
   },
   "keywords": ["rails", "web applications","web", "fullstack", "applications"],
   "dependencies": { 
-	  "express":  ">= 2.3.11"
+	  "express":  ">= 2.4.0"
 	, "connect": ">= 1.5.2 < 2.0.0"
     , "postmark": ">= 0.1.2" 
     , "login":    ">= 0.6.4"
     , "pg":       ">= 0.5.4"
     , "connect-redis": ">= 1.0.7"
   },
-  "main": "./uptown",
+  "main": "./lib/uptown",
   "engines": { "node": ">= 0.4.0" }
 }

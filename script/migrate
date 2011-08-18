@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+var uptown = require("uptown");
+var db = uptown.init(__dirname + "/../").db;
+uptown.migrate(function () {
+  db.end();
+  console.log("Migrations complete.");
+});
